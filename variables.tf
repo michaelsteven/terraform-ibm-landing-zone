@@ -752,10 +752,11 @@ variable "key_management" {
 variable "atracker" {
   description = "atracker variables"
   type = object({
-    resource_group        = string
-    receive_global_events = bool
-    collector_bucket_name = string
-    add_route             = bool
+    use_activity_tracker  = bool
+    resource_group        = optional(string)
+    receive_global_events = optional(bool)
+    collector_bucket_name = optional(string)
+    add_route             = optional(bool)
   })
 }
 
